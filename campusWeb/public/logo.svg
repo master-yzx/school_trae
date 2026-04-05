@@ -1,0 +1,31 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c6a7" />
+      <stop offset="100%" stop-color="#0084d8" />
+    </linearGradient>
+  </defs>
+  <!-- book frame -->
+  <path
+    d="M32 56c0-8.8 7.2-16 16-16h64c8.8 0 16 3.2 24 8 8-4.8 15.2-8 24-8h64c8.8 0 16 7.2 16 16v136c0 8.8-7.2 16-16 16h-72c-8.8 0-17.6-2.4-24-6.4-6.4 4-15.2 6.4-24 6.4H48c-8.8 0-16-7.2-16-16V56z"
+    fill="none"
+    stroke="url(#g)"
+    stroke-width="12"
+    stroke-linejoin="round"
+  />
+  <!-- handshake -->
+  <path
+    d="M76 112h32l20 16 20-16h32l-28 28c-6.4 6.4-16.8 6.4-23.2 0l-4.8-4.8-4.8 4.8c-6.4 6.4-16.8 6.4-23.2 0L76 112z"
+    fill="url(#g)"
+  />
+  <!-- cart -->
+  <path
+    d="M88 144h80l-8 48H96l-8-48z"
+    fill="none"
+    stroke="url(#g)"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+  <circle cx="108" cy="204" r="8" fill="url(#g)" />
+  <circle cx="152" cy="204" r="8" fill="url(#g)" />
+</svg>
