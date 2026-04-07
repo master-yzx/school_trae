@@ -63,26 +63,35 @@
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="260">
+        <el-table-column label="操作" width="180">
           <template #default="{ row }">
-            <el-button text size="small" @click="view(row)">详情</el-button>
-            <el-button text size="small" @click="openEdit(row)">编辑</el-button>
-            <el-button
-              v-if="row.status === 'NORMAL'"
-              text
-              size="small"
-              type="danger"
-              @click="disable(row)"
-            >禁用</el-button>
-            <el-button
-              v-else
-              text
-              size="small"
-              type="success"
-              @click="enable(row)"
-            >启用</el-button>
-            <el-button text size="small" @click="viewProducts(row)">查看商品</el-button>
-            <el-button text size="small" type="danger" @click="remove(row)">删除</el-button>
+            <div class="action-btns-2x2">
+              <div class="action-row">
+                <el-button text size="small" @click="view(row)">详情</el-button>
+                <el-button text size="small" @click="openEdit(row)">编辑</el-button>
+              </div>
+              <div class="action-row">
+                <el-button text size="small" @click="viewProducts(row)">商品</el-button>
+                <el-button
+                  v-if="row.status === 'NORMAL'"
+                  text
+                  size="small"
+                  type="danger"
+                  @click="disable(row)"
+                >禁用</el-button>
+                <el-button
+                  v-else
+                  text
+                  size="small"
+                  type="success"
+                  @click="enable(row)"
+                >启用</el-button>
+                <el-button text size="small" type="danger" v-if="false" @click="remove(row)">删除</el-button>
+              </div>
+              <div class="action-row">
+                <el-button text size="small" type="danger" @click="remove(row)">删除</el-button>
+              </div>
+            </div>
           </template>
         </el-table-column>
       </el-table>
@@ -288,4 +297,15 @@ onMounted(() => {
   justify-content: flex-end;
 }
 </style>
+.action-btns-2x2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.action-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
 

@@ -25,9 +25,11 @@
               {{ data.enabled ? '显示' : '隐藏' }}
             </span>
             <div class="node-actions">
-              <el-button text size="small" @click.stop="openEdit(data)">编辑</el-button>
-              <el-button text size="small" @click.stop="toggle(data)">显示/隐藏</el-button>
-              <el-button text type="danger" size="small" @click.stop="remove(data)">删除</el-button>
+              <el-button text size="small" class="btn-edit" @click.stop="openEdit(data)">编辑</el-button>
+              <span class="action-divider"></span>
+              <el-button text size="small" class="btn-toggle" @click.stop="toggle(data)">显示/隐藏</el-button>
+              <span class="action-divider"></span>
+              <el-button text type="danger" size="small" class="btn-delete" @click.stop="remove(data)">删除</el-button>
             </div>
           </div>
         </template>
@@ -192,6 +194,34 @@ onMounted(() => {
   margin-left: auto;
   display: flex;
   gap: 0.25rem;
+  align-items: center;
+}
+.action-divider {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background: #e5e6eb;
+  margin: 0 4px;
+}
+.btn-edit {
+  color: #2563eb !important;
+  font-weight: 500;
+}
+.btn-edit:hover {
+  background: #f0f6ff !important;
+}
+.btn-toggle {
+  color: #64748b !important;
+}
+.btn-toggle:hover {
+  background: #f3f4f6 !important;
+}
+.btn-delete {
+  color: #f56c6c !important;
+  font-weight: bold;
+}
+.btn-delete:hover {
+  background: #fff0f0 !important;
 }
 </style>
 

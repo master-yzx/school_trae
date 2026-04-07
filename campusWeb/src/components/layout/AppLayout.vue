@@ -29,7 +29,7 @@ onMounted(() => {
 
 <style scoped>
 .page {
-  background: #e6f0fa;
+  background: #fff;
 }
 
 .main {

@@ -20,7 +20,7 @@ body {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #e6f0fa;
+  background: #fff;
 }
 // 让整个应用的最小高度为视口高度，确保页面内容能够占满整个屏幕
 #app {

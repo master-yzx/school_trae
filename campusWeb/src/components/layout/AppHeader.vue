@@ -9,19 +9,37 @@
           :ellipsis="false"
           @select="handleMenuSelect"
         >
-          <el-menu-item index="home">首页</el-menu-item>
-          <el-menu-item index="products">全部商品</el-menu-item>
+          <el-menu-item index="home">
+            <el-icon><House /></el-icon>
+            <span>首页</span>
+          </el-menu-item>
+          <el-menu-item index="products">
+            <el-icon><Goods /></el-icon>
+            <span>全部商品</span>
+          </el-menu-item>
           <el-sub-menu index="category">
-            <template #title>全部分类</template>
+            <template #title>
+              <el-icon><Grid /></el-icon>
+              <span>全部分类</span>
+            </template>
             <CategoryMenuNode
               v-for="item in categories"
               :key="item.id"
               :node="item"
             />
           </el-sub-menu>
-          <el-menu-item index="rules">交易须知</el-menu-item>
-          <el-menu-item index="forum">论坛</el-menu-item>
-          <el-menu-item index="notice">公告</el-menu-item>
+          <el-menu-item index="rules">
+            <el-icon><Document /></el-icon>
+            <span>交易须知</span>
+          </el-menu-item>
+          <el-menu-item index="forum">
+            <el-icon><ChatLineSquare /></el-icon>
+            <span>论坛</span>
+          </el-menu-item>
+          <el-menu-item index="notice">
+            <el-icon><Bell /></el-icon>
+            <span>公告</span>
+          </el-menu-item>
         </el-menu>
       </div>
 
@@ -119,7 +137,7 @@ import { useRouter, useRoute } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import request from '../../utils/request';
 import { useAuthStore } from '../../stores/auth';
-import { ArrowDown, UserFilled, List, Message, UploadFilled, SwitchButton, ShoppingCart } from '@element-plus/icons-vue';
+import { ArrowDown, UserFilled, List, Message, UploadFilled, SwitchButton, ShoppingCart, House, Goods, Grid, Document, ChatLineSquare, Bell } from '@element-plus/icons-vue';
 import CategoryMenuNode from './CategoryMenuNode.vue';
 
 defineProps({
@@ -304,17 +322,17 @@ watch(
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   display: grid;
   grid-template-columns: auto minmax(0, 1.8fr) auto;
-  gap: 1rem;
+  gap: 0.75rem;
   align-items: center;
 }
 
 .left-part {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .logo {
@@ -326,6 +344,18 @@ watch(
 
 .category-menu {
   border-bottom: none;
+}
+
+.category-menu :deep(.el-menu-item),
+.category-menu :deep(.el-sub-menu__title) {
+  margin: 0 2px;
+  padding: 0 12px;
+}
+
+.category-menu :deep(.el-menu-item) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .search-part {
